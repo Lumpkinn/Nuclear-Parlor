@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dnrufhirr66nk"]
+
+[ext_resource type="Script" uid="uid://b344uj8yokj6d" path="res://Scripts/title.gd" id="1_fp2oq"]
+[ext_resource type="Theme" uid="uid://3jhk0ey38bvm" path="res://Assets/Misc/ParlorTheme.tres" id="2_fp2oq"]
+[ext_resource type="FontFile" uid="uid://bnu2yqdbqtwj0" path="res://Assets/Misc/LazyFox Pixel Font 7.ttf" id="3_fp2oq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2jr1"]
+font = ExtResource("3_fp2oq")
+font_size = 66
+font_color = Color(0.24313726, 0.8666667, 0.6627451, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(0, 0.36078432, 1, 0)
+
+[node name="Title" type="Control" unique_id=1313922636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fp2oq")
+
+[node name="Panel" type="Panel" parent="." unique_id=2007152434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fp2oq")
+
+[node name="Title" type="Label" parent="Panel" unique_id=2046265711]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 82.0
+offset_right = 59.0
+offset_bottom = 105.0
+grow_horizontal = 2
+text = "Nuclear Parlor"
+label_settings = SubResource("LabelSettings_v2jr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Title" unique_id=1618189006]
+position = Vector2(0, 157)
+
+[node name="ButtonSelection" type="VBoxContainer" parent="Panel" unique_id=1718067222]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 92.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 1)
+pivot_offset_ratio = Vector2(0.5, 0)
+
+[node name="Start" type="Button" parent="Panel/ButtonSelection" unique_id=167668709]
+layout_mode = 2
+theme = ExtResource("2_fp2oq")
+theme_override_fonts/font = ExtResource("3_fp2oq")
+text = "Start!"
+
+[node name="Exit" type="Button" parent="Panel/ButtonSelection" unique_id=211431049]
+layout_mode = 2
+theme = ExtResource("2_fp2oq")
+theme_override_fonts/font = ExtResource("3_fp2oq")
+text = "Exit!"
+
+[connection signal="pressed" from="Panel/ButtonSelection/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/ButtonSelection/Exit" to="." method="_on_exit_pressed"]

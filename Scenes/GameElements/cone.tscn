@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://2rxuirww7qi3"]
+
+[ext_resource type="Script" uid="uid://bb3eo57vfl61l" path="res://Scripts/cone.gd" id="1_ackr0"]
+[ext_resource type="Texture2D" uid="uid://bi1lhcwjvx7jq" path="res://Assets/Sprites/Cone (Nuclear Parlor).png" id="2_ip2ao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jr1"]
+size = Vector2(173, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5h4w"]
+
+[node name="cone" type="CharacterBody2D" unique_id=2146178292]
+script = ExtResource("1_ackr0")
+
+[node name="ConeSprite" type="Sprite2D" parent="." unique_id=590993880]
+texture = ExtResource("2_ip2ao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265125217]
+position = Vector2(0.5, -20.5)
+shape = SubResource("RectangleShape2D_v2jr1")
+
+[node name="ScoopHolder" type="Node2D" parent="CollisionShape2D" unique_id=837091536]
+position = Vector2(-0.5, -46.5)
+
+[node name="CatchZone" type="Area2D" parent="." unique_id=696832002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchZone" unique_id=1228728601]
+position = Vector2(0, -68)
+scale = Vector2(9.791229, -1.7110207)
+shape = SubResource("RectangleShape2D_k5h4w")
+debug_color = Color(1, 0.003921569, 0, 0.41960785)
+
+[connection signal="body_entered" from="CatchZone" to="." method="_on_catch_zone_body_entered"]

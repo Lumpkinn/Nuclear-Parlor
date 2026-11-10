@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bfa5sugx6l6ns"]
+
+[ext_resource type="Theme" uid="uid://3jhk0ey38bvm" path="res://Assets/Misc/ParlorTheme.tres" id="1_rk3l4"]
+[ext_resource type="FontFile" uid="uid://bnu2yqdbqtwj0" path="res://Assets/Misc/LazyFox Pixel Font 7.ttf" id="2_un6tb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v2jr1"]
+font = ExtResource("2_un6tb")
+font_size = 64
+font_color = Color(0.12511876, 0.30877253, 0.49509108, 1)
+
+[node name="PauseScreen" type="Control" unique_id=1821992556]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=300760677]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rk3l4")
+
+[node name="Label" type="Label" parent="Panel" unique_id=958584415]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 85.0
+offset_right = 56.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme = ExtResource("1_rk3l4")
+text = "Paused"
+label_settings = SubResource("LabelSettings_v2jr1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1392112869]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -32.0
+offset_right = 63.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1207864102]
+layout_mode = 2
+theme = ExtResource("1_rk3l4")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Panel/VBoxContainer" unique_id=1175604075]
+layout_mode = 2
+theme = ExtResource("1_rk3l4")
+text = "Exit to Title"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer" unique_id=1019089578]
+layout_mode = 2
+theme = ExtResource("1_rk3l4")
+text = "Exit
+"

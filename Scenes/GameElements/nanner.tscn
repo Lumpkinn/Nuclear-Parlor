@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b07nad77n0ltf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2jr1"]
+
+[node name="nanner" type="Node2D" unique_id=1160361974]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1002666745]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=324730910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=548198863]
+shape = SubResource("CapsuleShape2D_v2jr1")

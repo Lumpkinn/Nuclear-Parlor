@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5fvtnq5hsd7m"]
+
+[ext_resource type="Script" uid="uid://bhi8yhcgp2snx" path="res://Scripts/ice_cream_body.gd" id="1_se6p7"]
+[ext_resource type="Texture2D" uid="uid://dwtnhj1qccvvw" path="res://Assets/Sprites/icon.svg" id="2_ius6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2jr1"]
+radius = 55.326305
+
+[node name="Scoop" type="RigidBody2D" unique_id=772696332]
+mass = 0.5
+gravity_scale = 0.6
+script = ExtResource("1_se6p7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=461249751]
+texture = ExtResource("2_ius6g")
+
+[node name="IceCreamScoop" type="AnimatedSprite2D" parent="." unique_id=25075563]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70604514]
+shape = SubResource("CircleShape2D_v2jr1")
