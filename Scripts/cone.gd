@@ -22,6 +22,7 @@ func _on_catch_zone_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		#Removes the falling scoops, replaces them with a sprite, moves the scoopholder node up the size of the sprite.
 		#TODO: animation for it landing.
+		Globals.TOWERHEIGHT += 1
 		body.queue_free()
 		var scooptype: Texture2D = load("res://Assets/Sprites/icon.svg")
 		var scoop = Sprite2D.new()

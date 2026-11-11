@@ -9,9 +9,7 @@ func _ready() -> void:
 
 #Moves player to main scene.
 func _on_start_pressed() -> void:
-	get_tree().root.add_child(preload("res://Scenes/GameElements/Main.tscn").instantiate())
-	$".".queue_free()
-
+	get_tree().change_scene_to_file("res://Scenes/GameElements/Main.tscn")
 
 #Closes out the game
 func _on_exit_pressed() -> void:

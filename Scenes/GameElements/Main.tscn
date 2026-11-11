@@ -1,12 +1,67 @@
 [gd_scene format=3 uid="uid://bwkx6mcniaiwm"]
 
 [ext_resource type="Script" uid="uid://p0o3lbchm82h" path="res://Scripts/main.gd" id="1_r150o"]
+[ext_resource type="Texture2D" uid="uid://dumxfuednkqwb" path="res://Assets/Sprites/Background.png" id="2_74tby"]
 [ext_resource type="PackedScene" uid="uid://5fvtnq5hsd7m" path="res://Scenes/GameElements/scoop.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://2rxuirww7qi3" path="res://Scenes/GameElements/cone.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://bfa5sugx6l6ns" path="res://Scenes/MenuElements/pause_screen.tscn" id="4_pw0s8"]
+[ext_resource type="Theme" uid="uid://3jhk0ey38bvm" path="res://Assets/Misc/ParlorTheme.tres" id="5_q0jxq"]
+
+[sub_resource type="Animation" id="Animation_oyx44"]
+resource_name = "Background"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:region_rect")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.2, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.3999996, 6.6, 6.8, 7, 7.2, 7.3999996, 7.6, 7.609309, 7.809309, 8.009309, 8.20931, 8.409309, 8.609309, 8.809309, 9.009309, 9.20931, 9.409309, 9.609309, 9.809309, 10.009309, 10.209309, 10.409309, 10.609309, 10.809309, 11.009309, 11.209309),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 600, 800), Rect2(0, 50, 600, 800), Rect2(0, 100, 600, 800), Rect2(0, 150, 600, 800), Rect2(0, 200, 600, 800), Rect2(0, 250, 600, 800), Rect2(0, 300, 600, 800), Rect2(0, 350, 600, 800), Rect2(0, 400, 600, 800), Rect2(0, 450, 600, 800), Rect2(0, 500, 600, 800), Rect2(0, 550, 600, 800), Rect2(0, 600, 600, 800), Rect2(0, 650, 600, 800), Rect2(0, 700, 600, 800), Rect2(0, 750, 600, 800), Rect2(0, 800, 600, 800), Rect2(0, 850, 600, 800), Rect2(0, 900, 600, 800), Rect2(0, 950, 600, 800), Rect2(0, 100, 600, 800), Rect2(0, 150, 600, 800), Rect2(0, 200, 600, 800), Rect2(0, 250, 600, 800), Rect2(0, 300, 600, 800), Rect2(0, 350, 600, 800), Rect2(0, 400, 600, 800), Rect2(0, 450, 600, 800), Rect2(0, 500, 600, 800), Rect2(0, 550, 600, 800), Rect2(0, 600, 600, 800), Rect2(0, 650, 600, 800), Rect2(0, 700, 600, 800), Rect2(0, 750, 600, 800), Rect2(0, 800, 600, 800), Rect2(0, 850, 600, 800), Rect2(0, 900, 600, 800), Rect2(0, 950, 600, 800), Rect2(0, 1000, 600, 800), Rect2(0, 100, 600, 800), Rect2(0, 150, 600, 800), Rect2(0, 200, 600, 800), Rect2(0, 250, 600, 800), Rect2(0, 300, 600, 800), Rect2(0, 350, 600, 800), Rect2(0, 400, 600, 800), Rect2(0, 450, 600, 800), Rect2(0, 500, 600, 800), Rect2(0, 550, 600, 800), Rect2(0, 600, 600, 800), Rect2(0, 650, 600, 800), Rect2(0, 700, 600, 800), Rect2(0, 750, 600, 800), Rect2(0, 800, 600, 800), Rect2(0, 850, 600, 800), Rect2(0, 900, 600, 800), Rect2(0, 950, 600, 800), Rect2(0, 1000, 600, 800)]
+}
+
+[sub_resource type="Animation" id="Animation_74tby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 600, 800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l36ja"]
+_data = {
+&"Background": SubResource("Animation_oyx44"),
+&"RESET": SubResource("Animation_74tby")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_k5h4w"]
+font_color = Color(0.2577861, 0.4775684, 1, 1)
+outline_size = 2
+outline_color = Color(3.6098064e-07, 0.24336249, 0.24519274, 1)
 
 [node name="Main" type="Node2D" unique_id=861422007]
 script = ExtResource("1_r150o")
+
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=308509343]
+libraries/ = SubResource("AnimationLibrary_l36ja")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1649332076]
+texture_repeat = 2
+position = Vector2(301.00003, 383.00003)
+texture = ExtResource("2_74tby")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 800)
 
 [node name="Scoop" parent="." unique_id=2042903329 instance=ExtResource("2_idj7w")]
 
@@ -17,3 +72,15 @@ position = Vector2(294, 613)
 process_mode = 3
 
 [node name="PauseScreen" parent="CanvasLayer" unique_id=1821992556 instance=ExtResource("4_pw0s8")]
+visible = false
+
+[node name="ScoopScore" type="Label" parent="." unique_id=1801989841]
+offset_left = 466.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 38.0
+theme = ExtResource("5_q0jxq")
+text = "Stack Height: 0"
+label_settings = SubResource("LabelSettings_k5h4w")
+horizontal_alignment = 1
+vertical_alignment = 1

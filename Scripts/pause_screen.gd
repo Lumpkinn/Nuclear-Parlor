@@ -32,9 +32,12 @@ func _on_resume_pressed() -> void:
 
 
 func _on_title_pressed() -> void:
-	pass # Replace with function body.
+	print("OW")
+	get_tree().change_scene_to_file("res://Scenes/MenuElements/title.tscn")
+
 
 func _on_exit_pressed() -> void:
+	print("YEOWCH")
 	get_tree().quit()
 
 func _on_reset_pressed() -> void:
