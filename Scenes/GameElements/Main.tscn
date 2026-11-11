@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://p0o3lbchm82h" path="res://Scripts/main.gd" id="1_r150o"]
 [ext_resource type="PackedScene" uid="uid://5fvtnq5hsd7m" path="res://Scenes/GameElements/scoop.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://2rxuirww7qi3" path="res://Scenes/GameElements/cone.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://bfa5sugx6l6ns" path="res://Scenes/MenuElements/pause_screen.tscn" id="4_pw0s8"]
 
 [node name="Main" type="Node2D" unique_id=861422007]
 script = ExtResource("1_r150o")
@@ -11,3 +12,8 @@ script = ExtResource("1_r150o")
 
 [node name="cone" parent="." unique_id=2146178292 instance=ExtResource("3_kln2b")]
 position = Vector2(294, 613)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=722714066]
+process_mode = 3
+
+[node name="PauseScreen" parent="CanvasLayer" unique_id=1821992556 instance=ExtResource("4_pw0s8")]

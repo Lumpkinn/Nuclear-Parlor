@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://b07nad77n0ltf"]
 
+[ext_resource type="Texture2D" uid="uid://dwtnhj1qccvvw" path="res://Assets/Sprites/icon.svg" id="1_58pko"]
+[ext_resource type="Script" uid="uid://bhey0j0bqdyt4" path="res://Scenes/GameElements/nanner.gd" id="1_cn8bp"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2jr1"]
+height = 146.0
 
 [node name="nanner" type="Node2D" unique_id=1160361974]
+script = ExtResource("1_cn8bp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1002666745]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=324730910]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=548198863]
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_v2jr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D" unique_id=107600195]
+texture = ExtResource("1_58pko")
