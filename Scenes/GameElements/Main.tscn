@@ -50,6 +50,9 @@ font_color = Color(0.2577861, 0.4775684, 1, 1)
 outline_size = 2
 outline_color = Color(3.6098064e-07, 0.24336249, 0.24519274, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_1bbog"]
+font_color = Color(0.25882354, 0.47843137, 1, 1)
+
 [node name="Main" type="Node2D" unique_id=861422007]
 script = ExtResource("1_r150o")
 
@@ -84,3 +87,16 @@ text = "Stack Height: 0"
 label_settings = SubResource("LabelSettings_k5h4w")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimeRemaining" type="Label" parent="." unique_id=94705727]
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 150.0
+offset_bottom = 36.0
+theme = ExtResource("5_q0jxq")
+text = "Time Remaining: "
+label_settings = SubResource("LabelSettings_1bbog")
+
+[node name="GameTime" type="Timer" parent="." unique_id=1073879771]
+
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]

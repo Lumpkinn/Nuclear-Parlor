@@ -27,5 +27,8 @@ func _on_catch_zone_body_entered(body: Node2D) -> void:
 		var scooptype: Texture2D = load("res://Assets/Sprites/icon.svg")
 		var scoop = Sprite2D.new()
 		scoop.set_texture(scooptype)
-		$CollisionShape2D/ScoopHolder.add_child(scoop)
-		scoop.position.y -= 50
+		$CollisionShape2D/ScoopHolder.add_child(scoop)s
+		#for child in $CollisionShape2D/ScoopHolder.get_children():
+		#	if child.position.y == 0:
+		scoop.position.y += -(Globals.TOWERHEIGHT*50)
+		
