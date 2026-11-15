@@ -1,13 +1,16 @@
 Must adds:
 	Make the scoops vary in size as game continues.
 	varying speeds as time goes on
-	Nana pity system
+	Nana pity system that'll make the chance of one appearing increase
+	make windows and mac release.
+	
 
 Bugs:
 	Banana sprite disappears, and is replaced with a scoop sprite!!
 	Collision 2d is not moving uniformly.
 
 Maybes:
-	Music
+	Music (Gameplay music, title screen music, pause screen music)
+	sound effects (UI, scoops, nanas), 
 	More animations, like tweening (Nana reactor, scoops falling, scoops landing, fixing bg, etc.)
-	intro, with tutorial
+	intro, with tutorial (Probably a text box teaching the player)
