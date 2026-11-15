@@ -8,6 +8,11 @@
 <li>Music</li>
 <li>A tutorial</li>
 
-<h3>Attributions</h3>
+<h3>How to run<h3>
+<li>Go to the releases page, and download the latest release for your OS.</li>
+<li>Extract the file.</li>
+<li>Run the file.</li>
+  
+<h4>Attributions</h4>
 <p>No AI was used for this project whatsoever.</p>
 <p>All assets made by me.</p>
