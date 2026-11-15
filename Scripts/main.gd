@@ -41,10 +41,8 @@ func _add_Scoop():
 		add_child(scoop)
 
 		scoop.position.y = -(Globals.TOWERHEIGHT*50)
-	#if Globals.IS_NANA == true:
-		#alr, make sure that it ACTUALLY adds time7
-		#clock.time_left = clock.time_left + 15.0
-		#Handle the animations here, and shorten the stack too!
+	if Globals.IS_NANA == true:
+		clock.start(clock.time_left + 15.0)
 
 func gameover():
 	var gameoverscreen = preload("res://Scenes/MenuElements/game_over.tscn")

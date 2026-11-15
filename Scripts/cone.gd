@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var speed = 500
 var target: Vector2
+var tex
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -31,9 +32,12 @@ func _on_catch_zone_body_entered(body: Node2D) -> void:
 		Globals.TOWERHEIGHT += 1
 		body.queue_free()
 		var scoop = Sprite2D.new()
-		scoop.set_texture(Globals.SCOOPCOLOR)
+		if Globals.IS_NANA == true:
+			tex = (load("res://Assets/Sprites/Nana.png"))
+		else:
+			tex = (Globals.SCOOPCOLOR)
+		scoop.set_texture(tex)
 		$CollisionShape2D/ScoopHolder.add_child(scoop)
+		#moves everything up, to make it look nicer
 		$CatchZone/CollisionShape2D.position.y += -(Globals.TOWERHEIGHT* 5)
-		#for child in $CollisionShape2D/ScoopHolder.get_children():
-		#	if child.position.y == 0:
 		scoop.position.y += -(Globals.TOWERHEIGHT * 50)
