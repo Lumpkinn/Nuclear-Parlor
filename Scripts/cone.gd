@@ -1,11 +1,11 @@
 extends CharacterBody2D
-#TODO: collision between scoops and cone.
-#TODO: Esc goes back to main menu
 
+#Simple variables for the scoops, like their falling speed, what texture they'll use, and a vector2d to help them fall
 @export var speed = 500
 var target: Vector2
 var tex
-# Called when the node enters the scene tree for the first time.
+
+#Locks the mouse, so the cone is used.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -13,9 +13,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		target = event.relative
-	
-func _physics_process(_delta: float) -> void:
-	#velocity = (target - position).normalized() * speed 
+
+#has the scoops/nana fall, and cuts the stack in half when nana falls
+func _physics_process(_delta: float) -> void: 
 	move_and_collide(target)
 	target = Vector2.ZERO
 	var child_num = $CollisionShape2D/ScoopHolder.get_child_count()
@@ -25,10 +25,10 @@ func _physics_process(_delta: float) -> void:
 				child.queue_free()
 				Globals.TOWERHEIGHT/=2
 
+#Code for catching scoops
 func _on_catch_zone_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		#Removes the falling scoops, replaces them with a sprite, moves the scoopholder node up the size of the sprite.
-		#TODO: animation for it landing.
 		Globals.TOWERHEIGHT += 1
 		body.queue_free()
 		var scoop = Sprite2D.new()
@@ -39,5 +39,5 @@ func _on_catch_zone_body_entered(body: Node2D) -> void:
 		scoop.set_texture(tex)
 		$CollisionShape2D/ScoopHolder.add_child(scoop)
 		#moves everything up, to make it look nicer
-		$CatchZone/CollisionShape2D.position.y += -(Globals.TOWERHEIGHT* 5)
+		$CatchZone/CollisionShape2D.position.y += -50
 		scoop.position.y += -(Globals.TOWERHEIGHT * 50)

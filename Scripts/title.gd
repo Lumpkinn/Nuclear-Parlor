@@ -3,6 +3,7 @@ extends Control
 @onready var StartButton = $Panel/ButtonSelection/Start
 @onready var ExitButton = $Panel/ButtonSelection/Exit
 
+#makes the mouse visible when the pause screen is active
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

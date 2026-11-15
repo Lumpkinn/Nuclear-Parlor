@@ -17,6 +17,7 @@ Make sure to keep the reactor powered, or else the shop might lose power!
  "
 run/main_scene="uid://dnrufhirr66nk"
 config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="uid://d04sw6at0k4o0"
 
 [autoload]
 

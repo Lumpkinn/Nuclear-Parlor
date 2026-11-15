@@ -56,12 +56,15 @@ font_color = Color(0.25882354, 0.47843137, 1, 1)
 [node name="Main" type="Node2D" unique_id=861422007]
 script = ExtResource("1_r150o")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=797560572]
+position = Vector2(301, 400)
+
 [node name="Animations" type="AnimationPlayer" parent="." unique_id=308509343]
 libraries/ = SubResource("AnimationLibrary_l36ja")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1649332076]
 texture_repeat = 2
-position = Vector2(301.00003, 383.00003)
+position = Vector2(301, 399)
 texture = ExtResource("2_74tby")
 region_enabled = true
 region_rect = Rect2(0, 0, 600, 800)
@@ -75,7 +78,6 @@ position = Vector2(294, 613)
 process_mode = 3
 
 [node name="PauseScreen" parent="CanvasLayer" unique_id=1821992556 instance=ExtResource("4_pw0s8")]
-visible = false
 
 [node name="ScoopScore" type="Label" parent="." unique_id=1801989841]
 offset_left = 466.0
