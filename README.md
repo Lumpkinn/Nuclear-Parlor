@@ -9,5 +9,5 @@
 <li>A tutorial</li>
 
 <h3>Attributions</h3>
-<p>Mo AI was used for this project whatsoever.</p>
+<p>No AI was used for this project whatsoever.</p>
 <p>All assets made by me.</p>
