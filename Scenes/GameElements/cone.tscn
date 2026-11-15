@@ -29,4 +29,10 @@ scale = Vector2(9.791229, -1.7110207)
 shape = SubResource("RectangleShape2D_k5h4w")
 debug_color = Color(1, 0.003921569, 0, 0.41960785)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CatchZone" unique_id=2052776038]
+position = Vector2(0, -68)
+scale = Vector2(9.791229, -1.7110207)
+shape = SubResource("RectangleShape2D_k5h4w")
+debug_color = Color(1, 0.003921569, 0, 0.41960785)
+
 [connection signal="body_entered" from="CatchZone" to="." method="_on_catch_zone_body_entered"]

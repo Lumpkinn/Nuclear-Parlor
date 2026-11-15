@@ -17,6 +17,12 @@ func _physics_process(_delta: float) -> void:
 	#velocity = (target - position).normalized() * speed 
 	move_and_collide(target)
 	target = Vector2.ZERO
+	var child_num = $CollisionShape2D/ScoopHolder.get_child_count()
+	if Globals.IS_NANA == true:
+		for child in $CollisionShape2D/ScoopHolder.get_children():
+			for i in child_num/2:
+				child.queue_free()
+				Globals.TOWERHEIGHT/=2
 
 func _on_catch_zone_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
@@ -24,11 +30,10 @@ func _on_catch_zone_body_entered(body: Node2D) -> void:
 		#TODO: animation for it landing.
 		Globals.TOWERHEIGHT += 1
 		body.queue_free()
-		var scooptype: Texture2D = load("res://Assets/Sprites/icon.svg")
 		var scoop = Sprite2D.new()
-		scoop.set_texture(scooptype)
-		$CollisionShape2D/ScoopHolder.add_child(scoop)s
+		scoop.set_texture(Globals.SCOOPCOLOR)
+		$CollisionShape2D/ScoopHolder.add_child(scoop)
+		$CatchZone/CollisionShape2D.position.y += -(Globals.TOWERHEIGHT* 5)
 		#for child in $CollisionShape2D/ScoopHolder.get_children():
 		#	if child.position.y == 0:
-		scoop.position.y += -(Globals.TOWERHEIGHT*50)
-		
+		scoop.position.y += -(Globals.TOWERHEIGHT * 50)

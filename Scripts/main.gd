@@ -3,6 +3,7 @@ var NanaChance = 1
 @onready var clock = $GameTime
 #TODO: Make it so nanachance increases over time, and reset it after. Also handle sprites.
 
+
 # For calling scoop
 func _ready() -> void:
 	#Making sure everything is in order when the scene starts up initially.
@@ -21,7 +22,7 @@ func _ready() -> void:
 	add_child(timer)
 	timer.timeout.connect(_add_Scoop)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_on_game_time_timeout()
 
 #Spawns either a banana, or a scoop of ice cream.
@@ -38,9 +39,11 @@ func _add_Scoop():
 		var ScoopInstance = preload("res://Scenes/GameElements/scoop.tscn")
 		var scoop = ScoopInstance.instantiate()
 		add_child(scoop)
+
 		scoop.position.y = -(Globals.TOWERHEIGHT*50)
-	if Globals.IS_NANA == true:
-		Globals.TOWERHEIGHT = Globals.TOWERHEIGHT/2
+	#if Globals.IS_NANA == true:
+		#alr, make sure that it ACTUALLY adds time7
+		#clock.time_left = clock.time_left + 15.0
 		#Handle the animations here, and shorten the stack too!
 
 func gameover():
@@ -52,3 +55,8 @@ func _on_game_time_timeout() -> void:
 	$TimeRemaining.set_text("Time Remaining: " + str( round(clock.get_time_left())))
 	if Globals.IS_NANA == true:
 		Globals.IS_NANA = false
+	if clock.get_time_left() == 0:
+		var Gameover = preload("res://Scenes/MenuElements/game_over.tscn")
+		var Gameoverscreen = Gameover.instantiate()
+		add_child(Gameoverscreen)
+		get_tree().paused = true

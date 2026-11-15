@@ -98,5 +98,6 @@ text = "Time Remaining: "
 label_settings = SubResource("LabelSettings_1bbog")
 
 [node name="GameTime" type="Timer" parent="." unique_id=1073879771]
+one_shot = true
 
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
